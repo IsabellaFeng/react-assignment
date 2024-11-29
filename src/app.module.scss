@@ -2,3 +2,37 @@
   font-family: "Roboto";
   color: orange;
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.container {
+  margin: 10px;
+  border: 1px solid black;
+  height: 500px;
+  width: 300px;
+}
+
+.menu_button,
+.back_button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.header span {
+  font-size: 18px;
+  font-weight: bold;
+  margin: auto;
+}
+
+.content {
+  padding: 10px;
+}
