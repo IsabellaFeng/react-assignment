@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { App } from "./app";
 import RegisterCardForm from "./components/RegisterCardForm";
@@ -22,7 +22,7 @@ describe("RegisterCardForm Component", () => {
     render(<RegisterCardForm />);
     expect(screen.getByText("Register card form")).toBeInTheDocument();
     expect(screen.getByLabelText("register-card-form-menu-button")).toBeInTheDocument();
-    expect(screen.getByText("Welcome")).toBeInTheDocument();
+    expect(screen.getByText(/Welcome/i)).toBeInTheDocument();
     expect(screen.getByPlaceholderText("Credit card number")).toBeInTheDocument();
     expect(screen.getByPlaceholderText("CVC")).toBeInTheDocument();
     expect(screen.getByPlaceholderText("expiry")).toBeInTheDocument();
@@ -32,20 +32,20 @@ describe("RegisterCardForm Component", () => {
   it("should render MenuContent when menu button is clicked", () => {
     render(<RegisterCardForm />);
     const menuButton = screen.getByLabelText("register-card-form-menu-button");
-    menuButton.click();
-    expect(screen.getByText("This is menu content")).toBeInTheDocument();
+    fireEvent.click(menuButton);
+    expect(screen.getByText(/This is menu content/i)).toBeInTheDocument();
     expect(screen.getByLabelText("menu-go-back-button")).toBeInTheDocument();
   });
 
   it("should go back to RegisterCardForm when Back button is clicked", () => {
     render(<RegisterCardForm />);
     const menuButton = screen.getByLabelText("register-card-form-menu-button");
-    menuButton.click();
+    fireEvent.click(menuButton);
     const goBackButton = screen.getByLabelText("menu-go-back-button");
-    goBackButton.click();
-    expect(screen.getByText("Register card form")).toBeInTheDocument();
+    fireEvent.click(goBackButton);
+    expect(screen.getByText(/Register card form/i)).toBeInTheDocument();
     expect(screen.getByLabelText("register-card-form-menu-button")).toBeInTheDocument();
-    expect(screen.getByText("Welcome")).toBeInTheDocument();
+    expect(screen.getByText(/Welcome/i)).toBeInTheDocument();
     expect(screen.getByPlaceholderText("Credit card number")).toBeInTheDocument();
     expect(screen.getByPlaceholderText("CVC")).toBeInTheDocument();
     expect(screen.getByPlaceholderText("expiry")).toBeInTheDocument();

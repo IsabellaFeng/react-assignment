@@ -38,7 +38,7 @@ const RegisterCardForm: React.FC = () => {
             >
               ☰
             </button>
-            <span>Register Card Form</span>
+            <span>Register card form</span>
           </header>
           <main className={styles.content}>
             <p>Welcome {form.useFirstName}</p>
@@ -65,7 +65,7 @@ const RegisterCardForm: React.FC = () => {
                 <input
                   type="text"
                   name="expiry"
-                  placeholder="Expiry"
+                  placeholder="expiry"
                   value={form.expiry}
                   onChange={handleInputChange}
                   className={styles.input}
