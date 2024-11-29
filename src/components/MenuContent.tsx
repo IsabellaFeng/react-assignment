@@ -7,7 +7,7 @@ interface Props {
 const MenuContent: React.FC<Props> = ({ goBack }) => {
   return (
     <div>
-      <button onClick={goBack}>Go Back</button>
+      <button aria-label='menu-go-back-button' onClick={goBack}>Go Back</button>
       <div>Menu Content</div>
     </div>
   )

@@ -11,7 +11,7 @@ const RegisterCardForm: React.FC = () => {
       ) : (
         <div>
           RegisterCardForm
-          <button onClick={() => setShowMenu(true)}>
+          <button aria-label='register-card-form-menu-button' onClick={() => setShowMenu(true)}>
             menu
           </button>
 
