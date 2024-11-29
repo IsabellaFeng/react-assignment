@@ -36,3 +36,23 @@
 .content {
   padding: 10px;
 }
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.flex-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input {
+  width: 90%;
+  padding: 10px;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
